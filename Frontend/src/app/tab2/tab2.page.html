@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-title>
+        Vouchers
+      </ion-title>
+      
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  
+  
+  <div class="ion-padding" *ngFor = "let voucher of vouchers | async"> 
+      <ion-card color=secondary >
+          <ion-card-header>
+            <ion-card-subtitle>Voucher</ion-card-subtitle>
+            <ion-card-title color="grey">{{voucher.title}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+              {{voucher.offer}}   </ion-card-content> 
+            <ion-item color=grey>
+                <ion-icon name="pricetags" slot="start"></ion-icon>
+                <ion-label> {{voucher.price}}</ion-label>
+                <button ion-button icon-end color="primary" clear (click)="presentConfirm(voucher)"item-end>
+                  <ion-icon size="large" name="cart"></ion-icon>
+                </button>
+              </ion-item></ion-card>
+  </div>
+  
+  <div class="ion-padding">
+    <ion-card color=secondary >
+        <ion-card-header>
+          <ion-card-subtitle>Clothes</ion-card-subtitle>
+          <ion-card-title>Bershka</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Buy 2 Get 1 Free </ion-card-content> 
+          <ion-item>
+              <ion-icon name="pricetags" slot="start"></ion-icon>
+              <ion-label>250 points</ion-label>
+          </ion-item></ion-card>
+  </div>
+  
+  </ion-content>
